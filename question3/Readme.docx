@@ -1,0 +1,9 @@
+For this question, I use association rules to find the relationship between products. The final result is stored in the file relationship_result.csv, whose format is similar to that of the relationship.csv file. The rawresul.csv file contains some information such as support, confidence level as well as lift for your reference. 
+For this task, I used R and the package implemented to build the association rules is “arules”. The documentation for this library can be found in the link below 
+https://cran.r-project.org/web/packages/arules/arules.pdf
+Below is the methods I have use 
+First, eliminate all the rows with one transactions since we are only interested in finding relationships between two products.
+Data engineering. Transform the data into the format similar 
+Apply the aprori formula to find all the rules . Pruning to improve the accuracy of all the rules.
+
+
