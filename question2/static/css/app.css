@@ -1,0 +1,88 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+}
+
+.flashes {
+    background-color: #4e9a06;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    color: #efefef;
+}
+
+header {
+    text-align: center;
+    font-size: 1.4em;
+    padding: 20px;
+    background-color: #1f77b4;
+    color: #efefef;
+}
+
+header a, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.filters {
+    padding: 10px;
+    border-bottom: 2px solid #efefef;
+}
+.filters h3 {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 4px;
+    margin: 4px;
+    font-weight: bold;
+} 
+
+.import {
+    padding: 10px;
+    text-align: center;
+    font-size: .8em;
+    background-color: #efefef;
+}
+
+.content {
+    width: 1200px;
+}
+
+.data {
+    float: left;
+    padding: 20px;
+    width: 209px;
+    border-right: 1px solid #ececec;
+}
+
+.data h3 {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 4px;
+    margin: 4px;
+    font-weight: bold;
+}
+
+.data table tr td {
+    padding: 2px;
+}
+
+.visualization {
+    float: right;
+    width: 950px;
+    text-align: center;
+}
+
+svg {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
