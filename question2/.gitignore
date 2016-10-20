@@ -1,0 +1,9 @@
+# Python Stuff
+*.py[co]
+__pycache__
+
+# Bower
+/static/lib/
+
+# Virtualenv
+/virtualenv
