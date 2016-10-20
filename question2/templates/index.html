@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HBase Visualization App</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/lib/reset-css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/app.css">
+</head>
+
+<body>
+    <header>
+        <a href="/">HBase Visualization</a>
+    </header>
+    <div class="flash">
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %} {% endwith %} {% block body %}{% endblock %}
+
+    </div>
+    <div class="import">
+        <form action="/import" method="post" enctype="multipart/form-data">
+            <label>Import and override data</label>
+            <input type="file" name="file">
+            <input type="submit">
+        </form>
+    </div>
+    <div class="filters">
+        <h3>Filter</h3>
+        <div id="filters">
+        </div>
+    </div>
+    <div class="content">
+        <div class="data">
+            <h3>Data</h3>
+            <div id="data"></div>
+        </div>
+        <div class="visualization">
+            <svg width="900" height="600"></svg>
+        </div>
+    </div>
+</body>
+<script id="template" type="x-tmpl-mustache">
+    {% raw %}
+    <table id="data-table">
+        <tr>
+            <td>Row Key</td>
+            <td style="background-color: {{color1}}">Product1</td>
+            <td style="background-color: {{color2}}">Product2</td>
+        </tr>
+
+        {{#rows}}
+        <tr>
+            <td>{{row_key}}</td>
+            <td style="background-color: {{color1}}">{{product1}}</td>
+            <td style="background-color: {{color2}}">{{product2}}</td>
+        </tr>
+        {{/rows}}
+
+    </table>
+    {% endraw %}
+</script>
+<script id="filter-template" type="x-tmpl-mustache">
+    {% raw %}
+    <div style="background-color: {{color1}}">
+        <strong>Product1</strong>
+        {{#product1filters}}
+            <input data-id="product1.{{.}}" type="checkbox"/> {{.}}
+        {{/product1filters}}
+    </div>
+    <div style="background-color: {{color2}}">
+        <strong>Product2</strong>
+        {{#product2filters}}
+            <input data-id="product2.{{.}}" type="checkbox"/> {{.}}
+        {{/product2filters}}
+    </div>
+    {% endraw %}
+</script>
+<script type="text/javascript" src="/static/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/static/lib/mustache.js/mustache.min.js"></script>
+<script type="text/javascript" src="/static/lib/d3/d3.min.js"></script>
+<script type="text/javascript" src="/static/js/app.js"></script>
+
+</html>
