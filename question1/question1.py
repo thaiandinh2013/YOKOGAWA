@@ -31,7 +31,7 @@ def import_hbase(path, filename,table_name):
 		df =  pd.read_csv(f,header=None)
     
 	# Please adjust the HOST and PORT arguements accordingly    		
-    connection = happybase.Connection('HOST','PORT')
+   	connection = happybase.Connection('HOST','PORT')
 	connection.open()
 	
    
